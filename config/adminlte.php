@@ -233,7 +233,7 @@ return [
 
         // AdminLTEデフォルト
         /*
-        // Navbar items:
+        //Navbar items:
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
@@ -245,10 +245,10 @@ return [
         ],
         */
 
-        // AdminLTEデフォルト
-        /*
+        // AdminLTEデフォルト★サンプル以下
+        
         // Sidebar items:
-        [
+        /*[
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],

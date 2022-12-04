@@ -1,13 +1,14 @@
 @extends('adminlte::page')
+<!--configフォルダ内---->
 
-@section('title', 'Dashboard')
+@section('title', 'ホーム')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>ホーム</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>こちらはホーム画面になります。</p>
 @stop
 
 @section('css')

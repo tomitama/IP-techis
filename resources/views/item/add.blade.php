@@ -24,13 +24,28 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <label for="name">商品名</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="商品名">
                         </div>
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
+                            <select class="form-control" id="type" name="type" placeholder="選択してください">
+                                @foreach(\App\Models\Item::TYPE_LIST as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                                @endforeach
+            
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">金額</label>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="金額">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quantity">在庫数</label>
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="在庫数">
                         </div>
 
                         <div class="form-group">

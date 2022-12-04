@@ -26,3 +26,5 @@ Route::prefix('items')->group(function () {
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
 });
+
+Route::get('/test',function(){ return view('test'); }); 

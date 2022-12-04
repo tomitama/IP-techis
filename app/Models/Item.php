@@ -14,23 +14,22 @@ class Item extends Model
     protected $fillable = [
         'user_id',
         'name',
+        'price',
         'type',
         'detail',
+        'quantity'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
+
+    const TYPE_LIST = [
+        //key=>value
+        1 => '衣服',
+        2 => 'バッグ',
+        3 => 'アクセサリー',
+        4 => 'シューズ',
+        5 => 'アクセサリー',
+        6 => '傘',
+
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-    ];
 }
