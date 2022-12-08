@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models;
 
 class Item extends Model
 {
@@ -12,6 +13,7 @@ class Item extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'user_id',
         'name',
         'price',

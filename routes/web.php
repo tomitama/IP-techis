@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,13 @@ Route::prefix('items')->group(function () {
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
 });
 
-Route::get('/test',function(){ return view('test'); }); 
+// Route::get('/item_update',function(){ return view('item_update'); }); 
+
+Route::get('/item_update/{id}',[App\Http\Controllers\ItemUpdateController::class,'item_update']);
+//編集画面表示
+
+// 商品編集フォーム⇒UPDATE処理
+Route::post('/item_update/{id}', [App\Http\Controllers\ItemUpdateController::class, 'update']);
+
+// 商品編集フォーム⇒DELETE処理
+Route::post('/item_delete/{id}', [App\Http\Controllers\ItemUpdateController::class, 'destroy']);
