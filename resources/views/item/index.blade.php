@@ -9,6 +9,16 @@
 @section('content')
 <div class="row">
     <div class="col-12">
+        <!----検索バーここから--->
+<form method="GET" class="item-form" action="{{ route('index') }}">
+    <input type="search" placeholder="検索" name="search" value="@if (isset($search)) {{ $search }} @endif">
+    <div class="button-search">
+        <button type="submit">検索</button>
+        <button>
+            <a href="{{ route('index') }}" class="text-black">クリア</a>
+        </button>
+    </div>
+</form>
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">商品一覧</h3>
@@ -49,6 +59,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $items->links();}}
             </div>
         </div>
     </div>
