@@ -1,4 +1,4 @@
 <?php
-$pass = password_hash('tomitamai', PASSWORD_DEFAULT);
+$pass = password_hash('kanrisyatest', PASSWORD_DEFAULT);
 echo $pass."\n";
 ?>
