@@ -39,3 +39,15 @@ Route::post('/item_update/{id}', [App\Http\Controllers\ItemUpdateController::cla
 
 // 商品編集フォーム⇒DELETE処理
 Route::post('/item_delete/{id}', [App\Http\Controllers\ItemUpdateController::class, 'destroy']);
+
+
+//管理者権限管理
+Route::get('/item_register',[App\Http\Controllers\ItemController::class, 'showRegister'])->name('item_register')->middleware(['auth', config('const.user_flg.kanrisya')]);
+
+// // 商品編集画面の表示
+// Route::get('/item_update/{id}', [App\Http\Controllers\ItemUpdateController::class, 'index'])->middleware(['auth', config('const.user_flg.kanrisya')]);
+
+// 管理者なら表示
+Gate::define('admin-higher', function ($users) {
+    return ($users->user_flg === 1);
+});

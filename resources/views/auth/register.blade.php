@@ -70,7 +70,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick='return confirm("【確認】管理者登録は役席者のみとなります。");'>
                                     {{ __('登録') }}
                                 </button>
                             </div>

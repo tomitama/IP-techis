@@ -11,7 +11,7 @@
     <div class="col-12">
         <!----検索バーここから--->
         <form method="GET" class="item-form" action="{{ route('index') }}">
-            <input type="search" placeholder="検索" name="search" value="@if (isset($search)) {{ $search }} @endif">
+            <input type="search" placeholder="商品名検索" name="search" value="@if (isset($search)) {{ $search }} @endif">
             <div class="button-search">
                 <button type="submit">検索</button>
                 <button>
@@ -26,7 +26,9 @@
                 <div class="card-tools">
                     <div class="input-group input-group-sm">
                         <div class="input-group-append">
+                        @can('admin-higher') {{-- 管理者権限のみに表示される --}}
                             <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
+                        @endcan
                         </div>
                     </div>
                 </div>
@@ -54,7 +56,10 @@
                                 <td class="quantity">{{ $item->quantity }}</td>
                                 <td class="type">{{\App\Models\Item::TYPE_LIST[$item->type] }}</td>
                                 <td class="detail">{{ $item->detail }}</td>
-                                <td><a href="{{ url('/item_update/'.$item -> id) }}" class="button_edit">編集</a>
+                                <td>
+                                @can('admin-higher') {{-- 管理者権限のみに表示される --}}
+                                <a href="{{ url('/item_update/'.$item -> id) }}" class="button_edit">編集</a>
+                                @endcan
                                     <!---idを渡す処理が必要---->
                                 </td>
                             </tr>
