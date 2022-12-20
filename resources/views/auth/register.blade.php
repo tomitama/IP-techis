@@ -64,8 +64,6 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
-
-<<<<<<< HEAD
                         <p style="text-align:center">
                         <label>
                         <input type="radio" name="user_flg" value="0" checked>一般　　　</label>
@@ -78,14 +76,6 @@
                                 <button type="submit" class="btn btn-primary" onclick='return confirm("【確認】管理者登録は役席者のみとなります。");'>
                                     {{ __('登録') }}
                                 </button>
-=======
-                            <div class="row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
->>>>>>> 1eed1f547ec1f3b259ef25248e7d2bb97d942927
                             </div>
                         </form>
                 </div>

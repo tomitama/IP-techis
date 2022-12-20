@@ -57,11 +57,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-<<<<<<< HEAD
-            //'price' =>['required','string','min:2','max:15'],
-            //'quantity' =>['required','string'],
-=======
->>>>>>> 1eed1f547ec1f3b259ef25248e7d2bb97d942927
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'user_flg' =>['required','string'],
         ]);
@@ -79,55 +74,8 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-<<<<<<< HEAD
             //'price' => $data['price'],
             //'quantity' =>$data['quantity'],
-=======
-            'password' => Hash::make($data['password']),
-        ]);
-    
-    }
-
-    /**
-     * 管理者ログイン用
-     */
-    protected function adminValidator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
-
-    public function showAdminRegisterForm()
-    {
-        return view('auth.register', ['authgroup' => 'admin']);
-    }
-
-    public function registerAdmin(Request $request)
-    {
-        $this->adminValidator($request->all())->validate();
-
-        event(new Registered($user = $this->createAdmin($request->all())));
-
-        Auth::guard('admin')->login($user);
-
-        if ($response = $this->registeredAdmin($request, $user)) {
-            return $response;
-        }
-
-        return $request->wantsJson()
-                    ? new JsonResponse([], 201)
-                    : redirect(route('admin-home'));
-    }
-
-    protected function createAdmin(array $data)
-    {
-        return Admin::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
->>>>>>> 1eed1f547ec1f3b259ef25248e7d2bb97d942927
             'password' => Hash::make($data['password']),
             'user_flg' => $data['user_flg'],
             

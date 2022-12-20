@@ -24,19 +24,11 @@
             <div class="card-header">
                 <h3 class="card-title">商品一覧</h3>
                 <div class="card-tools">
-<<<<<<< HEAD
                     <div class="input-group input-group-sm">
                         <div class="input-group-append">
                         @can('admin-higher') {{-- 管理者権限のみに表示される --}}
                             <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
                         @endcan
-=======
-                    <div class="input-group input-group-sm"></div>
-                    <div class="input-group-append">
-                        @if(Auth::user()->name == '')
-                            <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
-                        @endif
->>>>>>> 1eed1f547ec1f3b259ef25248e7d2bb97d942927
                         </div>
                     </div>
                 </div>
@@ -65,15 +57,9 @@
                                 <td class="type">{{\App\Models\Item::TYPE_LIST[$item->type] }}</td>
                                 <td class="detail">{{ $item->detail }}</td>
                                 <td>
-<<<<<<< HEAD
                                 @can('admin-higher') {{-- 管理者権限のみに表示される --}}
                                 <a href="{{ url('/item_update/'.$item -> id) }}" class="button_edit">編集</a>
                                 @endcan
-=======
-                                @if(Auth::user()->name == '')
-                                    <a href="{{ url('/item_update/'.$item -> id) }}" class="button_edit">編集</a>
-                                @endif
->>>>>>> 1eed1f547ec1f3b259ef25248e7d2bb97d942927
                                     <!---idを渡す処理が必要---->
                                 </td>
                             </tr>
