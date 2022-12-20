@@ -42,43 +42,43 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
 
-                        @guest
+                    @guest
                         @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                            </li>
                         @endif
 
                         @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('会員登録') }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('会員登録') }}</a>
+                            </li>
                         @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    {{ __('ログアウト') }}
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
                                 </a>
 
-                                @if (Route::has('register'))
-                                @isset($authgroup)
-                                @if (Route::has("$authgroup-register"))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route("$authgroup-register") }}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
-                        @else
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('ログアウト') }}
+                                    </a>
+
                         @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
+                        @isset($authgroup)
+                            @if (Route::has("$authgroup-register"))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route("$authgroup-register") }}">{{ __('Register') }}</a>
+                                    </li>
+                            @endif
+                        @else
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
                         @endisset
                         @endif
                         
@@ -88,13 +88,13 @@
                                     @if (!is_null(Auth::guard($authgroup)->user()))
                                         {{ Auth::guard($authgroup)->user()->name }}
                                     @else
-                                        guest
+                                    guest
                                     @endif
                                 @else
                                     @if (!is_null(Auth::user()))
                                         {{ Auth::user()->name }}
                                     @else
-                                        guest
+                                    guest
                                     @endif
                                 @endisset
                             </a>
@@ -110,7 +110,7 @@
                                 </form>
                             </div>
                         </li>
-                        @endguest
+                    @endguest
                     </ul>
                 </div>
             </div>
