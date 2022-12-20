@@ -40,6 +40,7 @@ Route::post('/item_update/{id}', [App\Http\Controllers\ItemUpdateController::cla
 // 商品編集フォーム⇒DELETE処理
 Route::post('/item_delete/{id}', [App\Http\Controllers\ItemUpdateController::class, 'destroy']);
 
+<<<<<<< HEAD
 
 //管理者権限管理
 Route::get('/item_register',[App\Http\Controllers\ItemController::class, 'showRegister'])->name('item_register')->middleware(['auth', config('const.user_flg.kanrisya')]);
@@ -51,3 +52,28 @@ Route::get('/item_register',[App\Http\Controllers\ItemController::class, 'showRe
 Gate::define('admin-higher', function ($users) {
     return ($users->user_flg === 1);
 });
+=======
+//Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// ここから追加
+Route::get('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm']);
+
+Route::get('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm']);
+
+Route::post('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
+Route::post('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'registerAdmin'])->name('admin-register');
+
+Route::view('/admin', 'admin')->middleware('auth:admin')->name('admin-home');
+
+
+// Route::get('password/admin/reset', [App\Http\Controllers\Auth\AdminForgotPasswordController::class, 'showLinkRequestForm'])->name('admin.password.request');
+// Route::post('password/admin/email', [App\Http\Controllers\Auth\AdminForgotPasswordController::class, 'sendResetLinkEmail'])->name('admin.password.email');
+// Route::get('password/admin/reset/{token}', [App\Http\Controllers\Auth\AdminResetPasswordController::class, 'showResetForm'])->name('admin.password.reset');
+// Route::post('password/admin/reset', [App\Http\Controllers\Auth\AdminResetPasswordController::class, 'reset'])->name('admin.password.update');
+>>>>>>> 1eed1f547ec1f3b259ef25248e7d2bb97d942927
