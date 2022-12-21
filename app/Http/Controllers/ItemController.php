@@ -46,7 +46,7 @@ class ItemController extends Controller
                 $query->where('name', 'like', '%'.$value.'%');
             }
            // 上記で取得した$queryをページネートにし、変数$usersに代入
-            $items = $query->paginate(5);
+            $items = $query->paginate(8);
         }
         
         return view('item.index', compact('items'));
