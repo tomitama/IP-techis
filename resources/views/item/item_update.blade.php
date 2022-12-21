@@ -11,6 +11,7 @@
     <div class="col-md-10">
         @if ($errors->any())
         <div class="alert alert-danger">
+            <strong>エラーが起こっています。</strong>
             <ul>
                 @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>

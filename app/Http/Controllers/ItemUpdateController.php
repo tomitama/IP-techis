@@ -34,9 +34,9 @@ class ItemUpdateController extends Controller
       $this->validate($request, [
          //'id' => 'required|max:100',
          'name' => 'required|max:100',
-         'price' => 'required|max:100',
-         'quantity' => 'required|max:100',
-         'detail' => 'nullable|max:150',
+         'price' => 'required|max:11',
+         'quantity' => 'required|max:11',
+         'detail' => 'nullable|max:500',
          'type' => 'required',
       ]);
       $item = Item::find($id);

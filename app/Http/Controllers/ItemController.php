@@ -62,6 +62,10 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'price' => 'required|max:11',
+                'quantity' => 'required|max:11',
+                'detail' => 'nullable|max:500',
+                'type' => 'required',
             ]);
 
             // 商品登録
