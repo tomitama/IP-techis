@@ -60,6 +60,7 @@
                     <div class="input-button">
                         <input type="submit" value="更新" class="btn btn-primary">
             </form>
+            <br>
             <!-- 削除ボタン -->
             <form action="/item_delete/{{$id}}" method="POST">
                 {{ csrf_field() }}
