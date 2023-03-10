@@ -1,35 +1,27 @@
-## 商品管理システム
+# 商品管理システム
 
-### 環境構築手順
+##概要
+このシステムでは店舗在庫の確認を権限をもつ人、持たない人にかかわらずWebシステム上で確認できるようにしたものです。
+商品の登録・編集・削除は権限を持つものが行い、在庫の確認閲覧はユーザーであれば誰でも確認できるようにしました。
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLかPostgreSQLのデータベース作成（名前：item_management）  
-  ローカルでMAMPを使用しているのであれば、MySQL推奨
-* .env にデータベース接続情報追加
-```
-例）
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=item_management
-DB_USERNAME=root
-DB_PASSWORD=root
-```
-* APP_KEY生成
-```
-$ php artisan key:generate
-```
-* Composerインストール
-```
-$ composer install
-```
-* フロント環境構築
-```
-$ npm install
-$ npm run dev
-```
-* マイグレーション
-```
-$ php artisan migrate
-```
+##主な機能
+-・管理者・一般ログイン・ログアウト機能
+-・商品一覧画面
+-・商品登録・編集・削除機能
+-・商品検索機能
+
+### 環境構築
+PHP 8.1.10 
+MySQL 5.6.50-log
+Laravel Framework 8.83.3
+
+## 設計書
+[設計書ページへ](https://docs.google.com/spreadsheets/d/1H7xZNd4kRze83-tRXCy-S129kQY7Amrc/edit#gid=1235033096)
+
+## システム閲覧
+[アプリケーションページへ](https://techis-ip-tomita-ip.herokuapp.com)
+## テストアカウント情報
+'''
+メールアドレス：kanrisya@test.com			
+パスワード：kanrisyatest
+'''
