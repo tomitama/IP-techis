@@ -22,6 +22,11 @@ Laravel Framework 8.83.3
 [アプリケーションページへ](https://techis-ip-tomita-ip.herokuapp.com)
 ## テストアカウント情報
 '''
+[管理者]
 メールアドレス：kanrisya@test.com			
 パスワード：kanrisyatest
+'''
+[一般]
+メールアドレス：taro@gmail.com
+パスワード：tarotaro
 '''
