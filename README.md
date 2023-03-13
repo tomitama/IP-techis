@@ -16,7 +16,7 @@ MySQL 5.6.50-log
 Laravel Framework 8.83.3
 
 ## 設計書
-[設計書ページへ](https://docs.google.com/spreadsheets/d/1H7xZNd4kRze83-tRXCy-S129kQY7Amrc/edit#gid=1235033096)
+[設計書ページへ](https://drive.google.com/drive/folders/1BObcn0yVvXhROe8TJsuXhn4aOIydeiAv?usp=share_link)
 
 ## システム閲覧
 [アプリケーションページへ](https://techis-ip-tomita-ip.herokuapp.com)
